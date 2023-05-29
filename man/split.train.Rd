@@ -16,8 +16,8 @@ extract_rules and select_rules}
 Setting a fixed seed number ensures reproducibility of the results.}
 
 \item{valid_perc}{The percentage of the original training data that \n
-can be used a validation data. By default, 30% samples in the original training data \n
-is used as validation data.}
+can be used a validation data. By default, 30% samples in the original \n
+training data is used as validation data.}
 }
 \value{
 A training dataset and a validation dataset (the last column are the \n

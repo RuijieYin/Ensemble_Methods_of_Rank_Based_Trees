@@ -27,5 +27,9 @@ Extract rules containing comparing gene pairs from Random Rank Forest
 library(EnsembleRankTrees)
 # load the example data:
 data(train_x_liver, train_y_liver)
+# get training data and validation data
+train_data <- split.train(train_x_liver, train_y_liver)$train.data
+validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
+extract rules:
 rules_table <- extract.rules(train_x_liver, train_y_liver)
 }
