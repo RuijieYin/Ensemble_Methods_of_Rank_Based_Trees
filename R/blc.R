@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' #' library(EnsembleRankTrees)
+#' library(EnsembleRankTrees)
 #' # load the example data:
 #' data(train_x_liver, train_y_liver)
 #' model <- blc(train_x_liver, train_y_liver)
