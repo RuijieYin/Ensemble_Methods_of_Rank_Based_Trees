@@ -8,3 +8,7 @@ Description: Contains functions to build Rank Random Forest, Boosting with Logit
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    caret,
+    gbm,
+    randomForestSRC

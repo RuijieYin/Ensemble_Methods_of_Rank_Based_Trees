@@ -1,9 +1,3 @@
-require(randomForestSRC)
-require(gbm)
-require(caret)
-
-
-
 # build a Random Rank Forest model
 
 rrf <- function (train_x, train_y = NULL, n.tree = 500, mtry = NULL) {
