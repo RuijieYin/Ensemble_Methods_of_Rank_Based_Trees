@@ -22,7 +22,7 @@ A blc model
 Fit a Boosting with LogitBoost Cost model
 }
 \examples{
-#' library(EnsembleRankTrees)
+library(EnsembleRankTrees)
 # load the example data:
 data(train_x_liver, train_y_liver)
 model <- blc(train_x_liver, train_y_liver)
