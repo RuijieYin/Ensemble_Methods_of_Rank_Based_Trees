@@ -1,5 +1,19 @@
-# build a Boosting with LogitBoost Cost model
-
+#' Fit a Boosting with LogitBoost Cost model
+#'
+#' @param train_x A data frame or a matrix of predictors
+#' @param train_y A vector of response.
+#' @param n.tree Number of trees to grow.
+#' @param n.minobsinnode Minimum size of terminal nodes.
+#'
+#' @return A blc model
+#' @export
+#'
+#' @examples
+#' #' library(EnsembleRankTrees)
+#' # load the example data:
+#' data(train_x_liver, train_y_liver)
+#' model <- blc(train_x_liver, train_y_liver)
+#'
 blc <- function (train_x, train_y = NULL, n.tree = 500, n.minobsinnode = 10) {
   options(warn = -1)
 

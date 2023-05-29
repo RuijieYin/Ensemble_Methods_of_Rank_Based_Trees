@@ -1,4 +1,18 @@
-# build a Random Rank Forest model
+#' Fit a Random Rank Forest model
+#'
+#' @param train_x A data frame or a matrix of predictors.
+#' @param train_y A vector of response. If omitted, rrf will run in unsupervised mode.
+#' @param n.tree Number of trees to grow.
+#' @param mtry Number of gene pairs randomly sampled as input at each split.
+#'
+#' @return A rrf model
+#' @export
+#'
+#' @examples
+#' library(EnsembleRankTrees)
+#' # load the example data:
+#' data(train_x_liver, train_y_liver)
+#' model <- rrf(train_x_liver, train_y_liver)
 
 rrf <- function (train_x, train_y = NULL, n.tree = 500, mtry = NULL) {
 
