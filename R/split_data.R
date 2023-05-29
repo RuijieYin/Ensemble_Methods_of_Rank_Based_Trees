@@ -23,26 +23,44 @@
 #' validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
 
 split.train <- function(train_x, train_y, seed_num = 1, valid_perc = 0.3) {
+
+  # function: convert.genepairs
+  # convert the raw expression values into gene pairs
+  convert.genepairs <- function(input_dat = train_x) {
+    # note: columns should be genes, rows are samples
+    # the last column are the class labels
+    # get gene pair data:
+    input_expr = input_dat
+    # get the number of columns
+    n_col = dim(input_expr)[2]
+    converted_input_expr = NULL
+    for (i in 1:(n_col - 1)) {
+      for (j in (i + 1):n_col) {
+        converted_input_expr = cbind(converted_input_expr, as.numeric(input_expr[, i] < input_expr[, j]))
+      }
+    }
+    data.list <- list("data.converted" = converted_input_expr)
+    return(data.list)
+  }
+
+  # convert train_x to gene pairs:
+  dat = convert.genepairs(train_x)$data.converted
+  # merge train_x and class labels:
+  data_input = cbind.data.frame(dat, as.factor(train_y))
+
   # extract the phenotypes
   phenotypes = unique(train_y)
 
-  # merge:
-  data_input = cbind.data.frame(train_x, as.factor(train_y))
-
-  # x%: training data (1x% training; 1-x% validation)
+  # x%: training data (x% training; 1-x% validation)
   data_class_1 <- data_input[data_input$phenotype == phenotypes[1],]
   set.seed(seed_num)
-  data_class_1.train.validation <- data_class_1[sample(nrow(data_class_1), round(nrow(data_class_1)*valid_perc)), ]
-  set.seed(seed_num)
-  data_class_1.training <- data_class_1[sample(nrow(data_class_1.train.validation), nrow(data_class_1)-round(nrow(data_class_1)*valid_perc)), ]
-  data_class_1.validation <- data_class_1[!rownames(data_class_1.train.validation) %chin% rownames(data_class_1.training),]
+  data_class_1.training <- data_class_1[sample(nrow(data_class_1), nrow(data_class_1)-round(nrow(data_class_1)*valid_perc)), ]
+  data_class_1.validation <- data_class_1[!rownames(data_class_1) %chin% rownames(data_class_1.training),]
 
   data_class_2 <- data_input[data$phenotype == phenotypes[2],]
   set.seed(seed_num)
-  data_class_2.train.validation <- data_class_2[sample(nrow(data_class_2), round(nrow(data_class_2)*valid_perc)), ]
-  set.seed(seed_num)
-  data_class_2.training <- data_class_2[sample(nrow(data_class_2.train.validation), nrow(data_class_2)-round(nrow(data_class_2)*valid_perc)), ]
-  data_class_2.validation <- data_class_2[!rownames(data_class_2.train.validation) %chin% rownames(data_class_2.training),]
+  data_class_2.training <- data_class_2[sample(nrow(data_class_2), nrow(data_class_2)-round(nrow(data_class_2)*valid_perc)), ]
+  data_class_2.validation <- data_class_2[!rownames(data_class_2) %chin% rownames(data_class_2.training),]
 
   training_data <- rbind(data_class_1.training, data_class_2.training)
   validation_data <- rbind(data_class_1.validation, data_class_2.validation)

@@ -14,6 +14,7 @@
 #' select.rule(validation_data, rules_table)$Plot.Num.Accuracy
 
 
+source("R/treeRule_Obtain_Judge.R")
 
 select.rules <- function(validation.data = validation_data, rule.table = rules_table) {
 

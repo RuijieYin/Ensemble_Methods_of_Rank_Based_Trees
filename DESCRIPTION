@@ -11,8 +11,11 @@ LazyData: true
 Imports: 
     caret,
     data.table,
+    data.tree,
+    DiagrammeR,
     dplyr,
     gbm,
     ggplot2,
+    parallel,
     randomForestSRC
 RoxygenNote: 7.2.3

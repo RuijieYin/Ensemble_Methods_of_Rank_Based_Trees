@@ -16,13 +16,16 @@
 #' # get training data and validation data
 #' train_data <- split.train(train_x_liver, train_y_liver)$train.data
 #' validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
+#' extract rules:
 #' rules_table <- extract.rules(train_x_liver, train_y_liver)
+
+source("R/treeRule_Obtain_Judge.R")
 
 extract.rules <- function (train_x, train_y, n.trees = 500, mtry = 10, node_depth_max = 3) {
   # grow n.tree of trees
   set.seed(1)
-  data_train = cbind.data.frame(train_x, as.factor(train_y))
-  tree.collection <- rfsrc(subtype~., data = data_train,
+  data = cbind.data.frame(train_x, as.factor(train_y))
+  tree.collection <- rfsrc(subtype~., data = data,
                            ntree = n.trees, mtry = mtry, nodedepth = node_depth_max,
                            bootstrap = "by.root", samptype = 'swr',
                            membership = T,
