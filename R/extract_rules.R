@@ -13,6 +13,9 @@
 #' library(EnsembleRankTrees)
 #' # load the example data:
 #' data(train_x_liver, train_y_liver)
+#' # get training data and validation data
+#' train_data <- split.train(train_x_liver, train_y_liver)$train.data
+#' validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
 #' rules_table <- extract.rules(train_x_liver, train_y_liver)
 
 extract.rules <- function (train_x, train_y, n.trees = 500, mtry = 10, node_depth_max = 3) {

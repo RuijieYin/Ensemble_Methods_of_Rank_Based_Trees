@@ -7,8 +7,8 @@
 #' @param seed_num The seed number to be used for random sampling process. \n
 #' Setting a fixed seed number ensures reproducibility of the results.
 #' @param valid_perc The percentage of the original training data that \n
-#' can be used a validation data. By default, 30% samples in the original training data \n
-#' is used as validation data.
+#' can be used a validation data. By default, 30% samples in the original \n
+#' training data is used as validation data.
 #'
 #' @return A training dataset and a validation dataset (the last column are the \n
 #' class labels)
