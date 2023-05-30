@@ -1,9 +1,6 @@
 # R and Python package for implementing ensemble methods of rank-based trees
 
 
-## Description
-
-
 
 ## Getting Started
 
@@ -29,7 +26,6 @@ library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
 model <- rrf(liver_data$train_x_liver, liver_data$train_y_liver)
-
 ```
 * Build a Boosting with LogitBoost Cost model:
 ```
@@ -37,7 +33,6 @@ library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
 model <- blc(liver_data$train_x_liver, liver_data$train_y_liver)
-
 ```
 
 
