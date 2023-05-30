@@ -32,6 +32,6 @@ library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
 # get training data and validation data
-train_data <- split.train(liver_data$train_x_liver, liver_data$train_y_liver)$train.data
-validation_data <- split.train(liver_data$train_x_liver, liver_data$train_y_liver)$validation.data
+train_data <- split.train(train_x_liver, train_y_liver)$train.data
+validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
 }

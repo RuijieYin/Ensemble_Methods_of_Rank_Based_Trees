@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' predict.rules(test_x_liver, selection)
+#' predict.rules(liver_data$test_x_liver, selection)$Prediction.results
 
 
 predict.rules <- function(data, decision.rules) {
@@ -52,31 +52,31 @@ predict.rules <- function(data, decision.rules) {
   prediction.results <- data.frame("sample no." = 1:nrow(data),
                                    "predicted class labels" = pred_class[,1])
 
-  # evaluation
-  # see performance: Cohen's Kappa
-  # 1st row: reference labels
-  # 2nd row: predicted labels
-  prediction <- matrix(prediction.results[,2], nrow = 1)
+  # # evaluation
+  # # see performance: Cohen's Kappa
+  # # 1st row: reference labels
+  # # 2nd row: predicted labels
+  # prediction <- matrix(prediction.results[,2], nrow = 1)
+  #
+  # compare_labels <- rbind(matrix(data[,dim(data)[2]], nrow = 1),
+  #                         prediction)
+  #
+  # remove <- which(prediction[1,] == "UNS")
+  #
+  # if (length(remove) == 0) {
+  #   compare_labels <- compare_labels
+  # } else if (length(remove) != 0) {
+  #   compare_labels <- compare_labels[,-remove]
+  # }
+  #
+  # # Concordance: kappa statistic
+  # # will need a matrix where the diagonal elements of the matrix are
+  # # the agreeing elements; the discordant observations are on the off-diagonal.
+  # # A confusion matrix:
+  # con_table <- confusionMatrix(data = as.factor(compare_labels[2,]),
+  #                              reference = as.factor(compare_labels[1,]))
 
-  compare_labels <- rbind(matrix(data[,dim(data)[2]], nrow = 1),
-                          prediction)
-
-  remove <- which(prediction[1,] == "UNS")
-
-  if (length(remove) == 0) {
-    compare_labels <- compare_labels
-  } else if (length(remove) != 0) {
-    compare_labels <- compare_labels[,-remove]
-  }
-
-  # Concordance: kappa statistic
-  # will need a matrix where the diagonal elements of the matrix are
-  # the agreeing elements; the discordant observations are on the off-diagonal.
-  # A confusion matrix:
-  con_table <- confusionMatrix(data = as.factor(compare_labels[2,]),
-                               reference = as.factor(compare_labels[1,]))
-
-  prediction.labels.kappa <- list("Prediction.results" = prediction.results,
-                                  "Results.table" = con_table)
+  prediction.labels.kappa <- list("Prediction.results" = prediction.results)
+                                  # "Results.table" = con_table)
   return(prediction.labels.kappa)
 }

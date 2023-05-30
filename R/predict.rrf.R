@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' predict(rrf$model, liver_test_x)
+#' predict(rrf$model, liver_data$liver_test_x)
 predict.rrf = function(object, newdata) {
   NULL
 }

@@ -12,7 +12,7 @@
 #' library(EnsembleRankTrees)
 #' # load the example data:
 #' data(liver_data)
-#' model <- rrf(train_x_liver, train_y_liver)
+#' model <- rrf(liver_data$train_x_liver, liver_data$train_y_liver)
 
 library(randomForestSRC)
 library(data.table)
