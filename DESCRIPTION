@@ -20,4 +20,13 @@ Imports:
     randomForestSRC
 RoxygenNote: 7.2.3
 Depends: 
+    caret,
+    data.table,
+    data.tree,
+    DiagrammeR,
+    dplyr,
+    gbm,
+    ggplot2,
+    parallel,
+    randomForestSRC,
     R (>= 2.10)

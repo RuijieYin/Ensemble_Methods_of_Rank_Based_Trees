@@ -2,7 +2,7 @@
 % Please edit documentation in R/split_data.R
 \name{split.train}
 \alias{split.train}
-\title{Split a dataset into train and validation data, to be used in \n
+\title{Split a dataset into train and validation data, to be used in
 extract_rules and select_rules}
 \usage{
 \method{split}{train}(train_x, train_y, seed_num = 1, valid_perc = 0.3)
@@ -12,19 +12,19 @@ extract_rules and select_rules}
 
 \item{train_y}{A vector of response.}
 
-\item{seed_num}{The seed number to be used for random sampling process. \n
+\item{seed_num}{The seed number to be used for random sampling process.
 Setting a fixed seed number ensures reproducibility of the results.}
 
-\item{valid_perc}{The percentage of the original training data that \n
-can be used a validation data. By default, 30% samples in the original \n
+\item{valid_perc}{The percentage of the original training data that
+can be used a validation data. By default, 30% samples in the original
 training data is used as validation data.}
 }
 \value{
-A training dataset and a validation dataset (the last column are the \n
+A training dataset and a validation dataset (the last column are the
 class labels)
 }
 \description{
-Split a dataset into train and validation data, to be used in \n
+Split a dataset into train and validation data, to be used in
 extract_rules and select_rules
 }
 \examples{

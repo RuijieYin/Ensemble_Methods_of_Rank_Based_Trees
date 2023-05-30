@@ -1,16 +1,16 @@
-#' Split a dataset into train and validation data, to be used in \n
+#' Split a dataset into train and validation data, to be used in
 #' extract_rules and select_rules
 #'
 #'
 #' @param train_x A data frame or a matrix of predictors.
 #' @param train_y A vector of response.
-#' @param seed_num The seed number to be used for random sampling process. \n
+#' @param seed_num The seed number to be used for random sampling process.
 #' Setting a fixed seed number ensures reproducibility of the results.
-#' @param valid_perc The percentage of the original training data that \n
-#' can be used a validation data. By default, 30% samples in the original \n
+#' @param valid_perc The percentage of the original training data that
+#' can be used a validation data. By default, 30% samples in the original
 #' training data is used as validation data.
 #'
-#' @return A training dataset and a validation dataset (the last column are the \n
+#' @return A training dataset and a validation dataset (the last column are the
 #' class labels)
 #' @export
 #'

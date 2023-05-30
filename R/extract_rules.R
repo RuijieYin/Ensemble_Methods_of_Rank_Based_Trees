@@ -4,7 +4,8 @@
 #' @param train_y A vector of response.
 #' @param n.trees Number of trees to grow.
 #' @param mtry Number of gene pairs randomly sampled as input at each split.
-#' @param node_depth_max Maximum depth to which a tree should be grown. The default behavior is that this parameter is ignored.
+#' @param node_depth_max Maximum depth to which a tree should be grown.
+#' The default behavior is that this parameter is ignored.
 #'
 #' @return A list of rules extracted from the fitted Random Rank Forest model
 #' @export

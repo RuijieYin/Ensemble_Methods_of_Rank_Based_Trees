@@ -5,7 +5,8 @@
 #' @param rule.table The object obtained from function extract_rule.
 #'
 #' @return A list of selected rules.
-#' @return A plot of increase in accuracy on the validation dataset when adding rules to the ensemble.
+#' @return A plot of increase in accuracy on the validation dataset when adding
+#' rules to the ensemble.
 #' @export
 #'
 #' @examples
