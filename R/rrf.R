@@ -14,6 +14,9 @@
 #' data(liver_data)
 #' model <- rrf(liver_data$train_x_liver, liver_data$train_y_liver)
 
+library(randomForestSRC)
+library(data.table)
+
 rrf <- function (train_x, train_y = NULL, n.tree = 500, mtry = NULL) {
 
   # function: check if Check if a dataset has been row standardized (sample-wise)

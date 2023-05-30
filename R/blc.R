@@ -13,7 +13,10 @@
 #' # load the example data:
 #' data(liver_data)
 #' model <- blc(liver_data$train_x_liver, liver_data$train_y_liver)
-#'
+
+library(gbm)
+library(data.table)
+
 blc <- function (train_x, train_y = NULL, n.tree = 500, n.minobsinnode = 10) {
   options(warn = -1)
 

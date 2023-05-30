@@ -16,6 +16,14 @@
 
 # source("R/treeRule_Obtain_Judge.R")
 
+library(data.table)
+library(data.tree)
+library(DiagrammeR)
+library(dplyr)
+library(ggplot2)
+library(parallel)
+library(randomForestSRC)
+
 select.rules <- function(validation.data = validation_data, rule.table = rules_table) {
   ## select rules randomly from trees, rule index must be sequential
   rfolds <- function (max.rules.tree, lfc) {
