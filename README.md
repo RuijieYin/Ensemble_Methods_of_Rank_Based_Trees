@@ -16,7 +16,7 @@
 
 #### For R package:
 
-* Download the R package from /download/EnsembleRankTrees_0.1.0.tar.gz
+* Download the R package from /download/EnsembleRankTrees_0.1.1.tar.gz
 * install.packages("EnsembleRankTrees")
 
 
