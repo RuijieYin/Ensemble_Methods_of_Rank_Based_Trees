@@ -25,4 +25,7 @@ liver_data
 Dataset comes from Chen, Xin, et al. "Gene expression patterns in human
 liver cancers." Molecular biology of the cell 13.6 (2002): 1929-1939.
 }
+\examples{
+data(liver_data)
+}
 \keyword{datasets}

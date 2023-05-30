@@ -11,8 +11,8 @@
 #' @examples
 #' library(EnsembleRankTrees)
 #' # load the example data:
-#' data(train_x_liver, train_y_liver)
-#' model <- rrf(train_x_liver, train_y_liver)
+#' data(liver_data)
+#' model <- rrf(liver_data$train_x_liver, liver_data$train_y_liver)
 
 rrf <- function (train_x, train_y = NULL, n.tree = 500, mtry = NULL) {
 
