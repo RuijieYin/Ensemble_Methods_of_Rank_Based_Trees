@@ -19,8 +19,8 @@
 #' # load the example data:
 #' data(liver_data)
 #' # get training data and validation data
-#' train_data <- split.train(liver_data$train_x_liver, liver_data$train_y_liver)$train.data
-#' validation_data <- split.train(liver_data$train_x_liver, liver_data$train_y_liver)$validation.data
+#' train_data <- split.train(train_x_liver, train_y_liver)$train.data
+#' validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
 
 split.train <- function(train_x, train_y, seed_num = 1, valid_perc = 0.3) {
 

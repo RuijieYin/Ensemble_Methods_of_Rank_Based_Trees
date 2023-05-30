@@ -27,14 +27,29 @@
 library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
-model <- rrf(liver_data$train_x_liver, liver_data$train_y_liver)
+model <- rrf(train_x_liver, train_y_liver)
 ```
 * Build a Boosting with LogitBoost Cost model:
 ```
 library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
-model <- blc(liver_data$train_x_liver, liver_data$train_y_liver)
+model <- blc(train_x_liver, train_y_liver)
+```
+* Explain the results by using the selected decision rules:
+```
+library(EnsembleRankTrees)
+# load the example data:
+data(liver_data)
+# get training data and validation data
+train_data <- split.train(train_x_liver, train_y_liver)$train.data
+validation_data <- split.train(train_x_liver, train_y_liver)$validation.data
+# extract rules:
+rules_table <- extract.rules(train_data)
+selection <- select.rules(validation_data, rule.table = rules_table$Rules)
+# optional: show the line plot:
+# select.rule(validation_data, rule.table = rules_table$Rules)$Plot.Num.Accuracy
+predict.rules(test_x_liver, selection)
 ```
 
 

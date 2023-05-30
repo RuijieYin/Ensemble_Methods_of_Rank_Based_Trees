@@ -68,7 +68,7 @@ blc <- function (train_x, train_y = NULL, n.tree = 500, n.minobsinnode = 10) {
                     n.minobsinnode = n.minobsinnode,
                     n.trees = n.tree)
   }
-  model.list <- list("model" = blc.model)
+  model.list <- list("model" = model)
   return(blc.model)
 }
 
