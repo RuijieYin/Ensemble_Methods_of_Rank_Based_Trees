@@ -10,5 +10,5 @@
 Prediction function for blc
 }
 \examples{
-predict(blc$model, liver_test_x)
+predict(blc$model, liver_data$liver_test_x)
 }

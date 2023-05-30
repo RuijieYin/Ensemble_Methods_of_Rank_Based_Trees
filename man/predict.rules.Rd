@@ -15,5 +15,5 @@
 Prediction function for rule-based methods
 }
 \examples{
-predict.rules(test_x_liver, selection)
+predict.rules(liver_data$test_x_liver, selection)$Prediction.results
 }

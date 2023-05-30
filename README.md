@@ -28,6 +28,8 @@ library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
 model <- rrf(liver_data$train_x_liver, liver_data$train_y_liver)
+# Predict the test data:
+predict(model, liver_data$test_x_liver)
 ```
 * Build a Boosting with LogitBoost Cost model:
 ```
@@ -35,6 +37,8 @@ library(EnsembleRankTrees)
 # load the example data:
 data(liver_data)
 model <- blc(liver_data$train_x_liver, liver_data$train_y_liver)
+# Predict the test data:
+predict(model, liver_data$test_x_liver)
 ```
 * Explain the results by using the selected decision rules:
 ```

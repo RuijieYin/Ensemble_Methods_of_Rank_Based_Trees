@@ -10,5 +10,5 @@
 Prediction function for rrf
 }
 \examples{
-predict(rrf$model, liver_test_x)
+predict(rrf$model, liver_data$liver_test_x)
 }
