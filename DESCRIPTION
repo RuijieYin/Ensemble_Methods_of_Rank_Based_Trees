@@ -1,7 +1,7 @@
 Package: EnsembleRankTrees
 Type: Package
 Title: Implement the ensemble methods of rank-based trees
-Version: 0.1.0
+Version: 0.1.1
 Author: Ruijie Yin
 Maintainer: Ruijie Yin <ruijieyin428@gmail.com>
 Description: Contains functions to build Rank Random Forest, Boosting with Logitboost Cost.

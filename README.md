@@ -46,6 +46,8 @@ Ruijie Yin (ruijieyin428@gmail.com)
 
 ## Version History
 
+* 0.1.1
+    * Added decision rule-based methods as a reference to explain the results
 
 * 0.1.0
     * Initial Release
